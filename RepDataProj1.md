@@ -10,8 +10,65 @@ Load packages
 
 ```r
 library(ggplot2)
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 3.4.3
+```
+
+```
+## 
+## Attaching package: 'ggplot2'
+```
+
+```
+## The following object is masked _by_ '.GlobalEnv':
+## 
+##     diamonds
+```
+
+```r
 library(dplyr)
+```
+
+```
+## Warning: package 'dplyr' was built under R version 3.4.3
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library(gridExtra)
+```
+
+```
+## Warning: package 'gridExtra' was built under R version 3.4.3
+```
+
+```
+## 
+## Attaching package: 'gridExtra'
+```
+
+```
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
 ```
 
 Loading and preprocessing the data (with initial assumption that we can ignore missing values)
@@ -258,7 +315,13 @@ activity2$date <- as.Date(as.character(activity2$date))
 
 #append weekday var to data frame
 activity2 <- mutate(activity2, Weekday = weekdays(activity2$date))
+```
 
+```
+## Warning: package 'bindrcpp' was built under R version 3.4.3
+```
+
+```r
 #adjust weekday variable (as factor) for weekday vs weekend
 for (i in 1:length(activity2$steps)) {
   if (activity2$Weekday[i] %in% c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")) {
